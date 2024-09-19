@@ -10,12 +10,13 @@ int main()
     int N = 10;
     float sum = 0;
     char variant;
+    int i = 1;
     cin >> variant;
     switch (variant)
     {
     case '1':
         /* FOR */
-        for (int i = 1; i <= N; i++)
+        for (i = 1; i <= N; i++)
         {
             sum = sum + (cos(i * x) + (cos(x) / cos(i)));
         }
@@ -23,7 +24,6 @@ int main()
         break;
     case '2':
         /* WHILE*/
-        int i = 1;
         while (i <= N)
         {
             sum = sum + (cos(i * x) + (cos(x) / cos(i)));
@@ -35,17 +35,15 @@ int main()
         /*DO WHILE*/
         do
         {
-            int i = 1;
             sum = sum + (cos(i * x) + (cos(x) / cos(i)));
             i++;
-        } while (i <= N)
-        {
-            sum = sum + (cos(i * x) + (cos(x) / cos(i)));
-            i++
-        }
+        } while (i <= N);
+
         y = 2.8 * x * sum;
         break;
+
     default:
+
         cout << "НЕВЕРНЫЙ СИМВОЛ";
         break;
     }
