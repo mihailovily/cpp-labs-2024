@@ -1,49 +1,65 @@
-class Abonent {
+#include <iostream>
+using namespace std;
+class Abonent
+{
 private:
-    string surname;
+    string surname = "Empty";
     int minutes;
     int price;
+    float payment;
 
 public:
-    Abonent(string h, int m, int s);  // объявляем конструктор
-
+    Abonent(string s = "Noname", int m = 0, int pr = 0); // объявляем конструктор
     // Объявляем три функции для чтения полей:
-    string GetHours();
-    int GetMinutes() const;
-    int GetSeconds() const;
+    string GetSurname();
+    int GetMinutes();
+    int GetPrice();
+    float GetPayment();
+    void SetSurname();
 };
 
-
-Abonent::Abonent(string h, int m, int s) {
-    if (s < 0 || s > 59) {
-        // обрабатываем ошибочные секунды
-    }
-    if (m < 0 || m > 59) {
-        // обрабатываем ошибочные минуты
-    }
-    if (h < 0 || h > 23) {
-        // обрабатываем ошибочные часы
-    }
+Abonent::Abonent(string h, int m, int pr)
+{
     surname = h;
     minutes = m;
-    seconds = s;
+    price = pr;
+    payment = minutes * price;
 }
 
-int Abonent::GetHours() const {
-    return hours;
+string Abonent::GetSurname()
+{
+    return surname;
 }
 
-int Abonent::GetMinutes() const {
+int Abonent::GetMinutes()
+{
     return minutes;
 }
 
-int Abonent::GetSeconds() const {
-    return seconds;
+int Abonent::GetPrice()
+{
+    return price;
 }
 
-#include <iostream>
+float Abonent::GetPayment()
+{
+    return payment;
+}
 
-int main() {
-    Time t(13, 30, 0);  // 13:30:00
-    std::cout << t.GetMinutes() << "\n";  // 13
+void Abonent::SetSurname(){
+    string new_s;
+    cin >> new_s;
+    this->surname = new_s;
+
+}
+
+int main()
+{
+    Abonent Ivan("Petrov", 30, 5);
+    cout << Ivan.GetSurname() << endl; // создание объекта с помощью конструктора с параметрами
+    Abonent Noname; // создание объекта с помощью конструктора по умолчанию
+    cout << Noname.GetSurname() << endl;
+    Ivan.SetSurname(); //редактирование и просмотр свойств каждого объекта (можно однократное)
+    cout << Ivan.GetSurname();
+    cout << Ivan.GetPayment(); //обработка массива объектов в соответствии с заданием лабораторной работы 1
 }
