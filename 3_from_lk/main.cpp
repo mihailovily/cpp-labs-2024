@@ -44,8 +44,8 @@ int main()
 
     default:
 
-        cout << "НЕВЕРНЫЙ СИМВОЛ";
+        cout << "НЕВЕРНЫЙ СИМВОЛ" << endl;
         break;
     }
-    cout << y;
+    cout << y << endl;
 }
