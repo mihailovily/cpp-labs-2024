@@ -60,6 +60,6 @@ int main()
     Abonent Noname; // создание объекта с помощью конструктора по умолчанию
     cout << Noname.GetSurname() << endl;
     Ivan.SetSurname(); //редактирование и просмотр свойств каждого объекта (можно однократное)
-    cout << Ivan.GetSurname();
-    cout << Ivan.GetPayment(); //обработка массива объектов в соответствии с заданием лабораторной работы 1
+    cout << Ivan.GetSurname() << endl;
+    cout << Ivan.GetPayment() << endl; //обработка массива объектов в соответствии с заданием лабораторной работы 1
 }
