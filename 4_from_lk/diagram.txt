@@ -1,0 +1,21 @@
++-------------------+
+|      Product      |
++-------------------+
+| - name: string    |
+| - price: double   |
++-------------------+
+| + display()       |
+| + setPrice(double)|
+| + getPrice():double|
++-------------------+            ^
+         ^                        \
+         |                         \
+         |                          \
++-------------------+        +--------------------+
+|    Television     |        |    Refrigerator     |
++-------------------+        +--------------------+
+| - screenSize: int |        | - volume: double    |
++-------------------+        +--------------------+
+| + display()       |        | + display()         |
+| + setScreenSize(int)|      | + setVolume(double) |
++-------------------+        +--------------------+
