@@ -54,7 +54,6 @@ int main() {
                 break;
             }
             case 4:
-                std::cout << "Exiting...\n";
                 break;
             default:
                 std::cout << "Invalid choice!\n";
